@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joyería - Mi Tienda</title>
+
+<style>
+/*==========================
+      ESTILOS GLOBALES
+===========================*/
+:root{
+  --fondo: #062238;
+  --texto: #ffffff;
+  --card: rgba(255,255,255,0.08);
+  --hover: #1e90ff;
+}
+
+.light-mode{
+  --fondo: #f0f0f0;
+  --texto: #000000;
+  --card: rgba(0,0,0,0.08);
+  --hover: #145a86;
+}
+
+body{
+  margin:0;
+  font-family: Arial;
+  background: var(--fondo);
+  color: var(--texto);
+  background-image: url('FONDO.jpg'); /* ← EDITA ESTE NOMBRE */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: 0.98;
+}
+
+/* Oscurecer la imagen de fondo */
+body::before{
+  content:"";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.55);
+  z-index:-1;
+}
+
+/*==========================
+          HEADER
+===========================*/
+header{
+  text-align:center;
+  padding: 20px 0;
+}
+header img{
+  width:180px; /* LOGO */
+}
+
+/*==========================
+            MENÚ
+===========================*/
+nav{
+  text-align:center;
+  margin-bottom:25px;
+}
+nav ul{
+  list-style:none;
+  padding:0;
+}
+nav ul li{
+  display:inline-block;
+  margin: 0 20px;
+}
+nav a{
+  text-decoration:none;
+  color:var(--texto);
+  font-size:20px;
+  padding:6px 12px;
+  transition:0.3s;
+  border-radius:6px;
+}
+nav a:hover{
+  background: var(--hover);
+  color:white;
+}
+
+/*==========================
+      SECCIONES
+===========================*/
+section{
+  display:none;
+  padding:20px;
+  max-width:1100px;
+  margin:auto;
+}
+section.active{
+  display:block;
+}
+
+/*==========================
+     TARJETAS PRODUCTOS
+===========================*/
+.producto{
+  background: var(--card);
+  padding:15px;
+  margin:10px;
+  border-radius:10px;
+  display:inline-block;
+  width:250px;
+  vertical-align:top;
+  text-align:center;
+  backdrop-filter: blur(4px);
+}
+.producto img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+.producto p{
+  margin:10px 0;
+  font-size:15px;
+}
+
+/*==========================
+     BOTÓN MODO OSCURO
+===========================*/
+#modoBtn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  padding:10px 20px;
+  background:var(--hover);
+  border:none;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <!-- FOTO DEL LOGO -->
+  <img src="Logo.png" alt="Logo de la joyería">
+</header>
+
+<button id="modoBtn">Modo Claro/Oscuro</button>
+
+<nav>
+  <ul>
+    <li><a href="#" onclick="mostrar('inicio')">Inicio</a></li>
+    <li><a href="#" onclick="mostrar('aretes')">Aretes</a></li>
+    <li><a href="#" onclick="mostrar('pulseras')">Pulseras</a></li>
+    <li><a href="#" onclick="mostrar('collares')">Collares</a></li>
+  </ul>
+</nav>
+
+<!-- =======================
+        SECCIÓN INICIO
+======================= -->
+<section id="inicio" class="active">
+  <h2>Bienvenido a Joyeria NICE</h2>
+  <p>
+    Aquí encontrarás joyería fina hecha a mano, elaborada con materiales de alta calidad.
+    Nuestro catálogo incluye piezas exclusivas como aretes, pulseras y collares diseñados
+    para resaltar tu elegancia en cada ocasión.
+  </p>
+
+  <div style="text-align:center;">
+    <img src="foto1.jpg" width="300">
+    <img src="foto2.jpg" width="300">
+    <img src="foto3.jpg" width="300">
+  </div>
+</section>
+
+<!-- =======================
+        ARETES
+======================= -->
+<section id="aretes">
+  <h2>Aretes</h2>
+
+  <!-- 8 ESPACIOS PARA PRODUCTOS -->
+  <div class="producto">
+    <img src="arete1.jpg">
+    <p>Descripción...</p>
+    <p><b>$00.00</b></p>
+  </div>
+
+  <div class="producto">
+    <img src="arete2.jpg">
+    <p>Descripción...</p>
+    <p><b>$00.00</b></p>
+  </div>
+
+  <!-- COPIA ESTOS DIV HASTA COMPLETAR 8 -->
+</section>
+
+<!-- =======================
+        PULSERAS
+======================= -->
+<section id="pulseras">
+  <h2>Pulseras</h2>
+
+  <div class="producto">
+    <img src="pulsera1.jpg">
+    <p>Descripción...</p>
+    <p><b>$00.00</b></p>
+  </div>
+
+  <div class="producto">
+    <img src="pulsera2.jpg">
+    <p>Descripción...</p>
+    <p><b>$00.00</b></p>
+  </div>
+
+  <!-- HASTA 8 PRODUCTOS -->
+</section>
+
+<!-- =======================
+        COLLARES
+======================= -->
+<section id="collares">
+  <h2>Collares</h2>
+
+  <div class="producto">
+    <img src="collar1.jpg">
+    <p>Descripción...</p>
+    <p><b>$00.00</b></p>
+  </div>
+
+  <div class="producto">
+    <img src="collar2.jpg">
+    <p>Descripción...</p>
+    <p><b>$00.00</b></p>
+  </div>
+
+  <!-- HASTA 8 PRODUCTOS -->
+</section>
+
+<script>
+/* Mostrar una sección y ocultar las demás */
+function mostrar(seccion){
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(seccion).classList.add("active");
+}
+
+/* MODO CLARO / OSCURO */
+document.getElementById("modoBtn").onclick = function(){
+  document.body.classList.toggle("light-mode");
+}
+</script>
+
+</body>
+</html>
